@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-titleFont = {'fontname': 'Kinnari', 'size': 13}
-axesFont = {'fontname': 'Kinnari', 'size': 9}
+titleFont = {'fontname': 'Times New Roman', 'size': 13}
+axesFont = {'fontname': 'Times New Roman', 'size': 9}
 ticksFont = {'fontname': 'SF Mono', 'size': 7}
 errorStyle = {'mew': 1, 'ms': 3, 'capsize': 3, 'color': 'blue', 'ls': ''}
 pointStyle = {'mew': 1, 'ms': 3, 'color': 'blue'}
@@ -152,8 +152,33 @@ plt.show()
 
 # %% TASK 15
 
+Distance,Count,Time,CountRate,Val,ValError = \
+    np.loadtxt("15_data.txt",skiprows=1,unpack=True,delimiter=",")
+
+plt.plot(Distance,Val,'x')
+plt.xlabel("Counts per Second / s¯¹", **axesFont)
+plt.ylabel("Frequency", **axesFont)
+plt.xticks(**ticksFont)
+plt.yticks(**ticksFont)
+plt.title("Task 15: ", **titleFont)
+# plt.savefig('Task 15.jpg', dpi=1000)
+plt.show()
+
+
 
 # %% TASK 16
+
+Distance,Count,Time,CountRate,Val,ValError = \
+    np.loadtxt("16_data.txt",skiprows=1,unpack=True,delimiter=",")
+
+plt.plot(Distance,Val,'x')
+plt.xlabel("Counts per Second / s¯¹", **axesFont)
+plt.ylabel("Frequency", **axesFont)
+plt.xticks(**ticksFont)
+plt.yticks(**ticksFont)
+plt.title("Task 16: ", **titleFont)
+# plt.savefig('Task 16.jpg', dpi=1000)
+plt.show()
 
 
 # %% TASK 17
