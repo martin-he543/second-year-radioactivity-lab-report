@@ -95,7 +95,7 @@ smallMeanDist = \
 plt.hist(smallMeanDist,bins=10)
 plt.xlabel("Counts per Second / s¯¹", **axesFont)
 plt.ylabel("Frequency", **axesFont)
-plt.xticks(**ticksFont)e
+plt.xticks(**ticksFont)
 plt.yticks(**ticksFont)
 plt.title("Task 11: Distribution of Number of Counts for a Small Mean", **titleFont)
 
