@@ -76,8 +76,7 @@ print("µ = ",params[1],"+/-",np.sqrt(cov_params[1][1]))
 print("k = ",params[2],"+/-",np.sqrt(cov_params[2][2]))
 print("B = ",params[3],"+/-",np.sqrt(cov_params[3][3]))
 
-
-
+##### CHI SQUARED SECTION
 
 
 
@@ -145,4 +144,5 @@ print("A = ",params[0],"+/-",np.sqrt(cov_params[0][0]))
 print("µ = ",params[1],"+/-",np.sqrt(cov_params[1][1]))
 print("k = ",params[2],"+/-",np.sqrt(cov_params[2][2]))
 print("B = ",params[3],"+/-",np.sqrt(cov_params[3][3]))
-# %%
+
+##### CHI SQUARED SECTION
