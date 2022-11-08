@@ -1,7 +1,35 @@
 distance,count,time,ln count,count uncertainty,ln count uncertainty
 0,176974,10,12.08375811,420.6827783,0.002377088
 0.51,94281,10,11.45403496,307.0521128,0.003256776
-1.03,43418,10,10.67862938,208.3698635,0.004799158
+11
+
+print("\nExponential Fit Parameters")
+print("A = ",params[0],"±",np.sqrt(cov_params[0][0]))
+print("µ = ",params[1],"±",np.sqrt(cov_params[1][1]))
+print("k = ",params[2],"±",np.sqrt(cov_params[2][2]))
+print("B = ",params[3],"±",np.sqrt(cov_params[3][3]))
+
+##### CHI SQUARED SECTION
+
+
+print("\nExponential Fit Parameters")
+print("A = ",params[0],"±",np.sqrt(cov_params[0][0]))
+print("µ = ",params[1],"±",np.sqrt(cov_params[1][1]))
+print("k = ",params[2],"±",np.sqrt(cov_params[2][2]))
+print("B = ",params[3],"±",np.sqrt(cov_params[3][3]))
+
+##### CHI SQUARED SECTION
+
+
+print("\nExponential Fit Parameters")
+print("A = ",params[0],"±",np.sqrt(cov_params[0][0]))
+print("µ = ",params[1],"±",np.sqrt(cov_params[1][1]))
+print("k = ",params[2],"±",np.sqrt(cov_params[2][2]))
+print("B = ",params[3],"±",np.sqrt(cov_params[3][3]))
+
+##### CHI SQUARED SECTION
+
+.03,43418,10,10.67862938,208.3698635,0.004799158
 1.52,19277,10,9.866667954,138.8416364,0.00720245
 0.22,126451,10,11.74761016,355.5994938,0.002812152
 0.73,66007,10,11.09751608,256.9182749,0.003892288

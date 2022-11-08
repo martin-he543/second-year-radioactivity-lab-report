@@ -32,28 +32,35 @@ plt.title("Task 19: Range of Decay Particles through Al", **titleFont)
 
 poly19A,cov_poly19A = np.polyfit(x19[:6],y19[:6],1,cov=True)
 x= np.linspace(0,3.5,1000)
-plt.plot(x,poly19A[0]*x + poly19A[1])
+plt.plot(x,poly19A[0]*x + poly19A[1],label="2.27MeV β, 0.54MeV β, \n0.51MeV β, γ Rays")
 poly19B,cov_poly19B = np.polyfit(x19[9:17],y19[9:17],1,cov=True)
 x= np.linspace(1,6,1000)
-plt.plot(x,poly19B[0]*x + poly19B[1],color="red")
+plt.plot(x,poly19B[0]*x + poly19B[1],color="red",label="2.27MeV β, γ Rays")
 poly19C,cov_poly19C = np.polyfit(x19[18:],y19[18:],1,cov=True)
 x= np.linspace(3,6,1000)
-plt.plot(x,poly19C[0]*x + poly19C[1],color="green")
+plt.plot(x,poly19C[0]*x + poly19C[1],color="green",label="γ Rays")
 
 x_intersection = -(poly19B[1] - poly19A[1])/(poly19B[0] - poly19A[0])
 print("first intersection: [",x_intersection,poly19A[0]*x_intersection+poly19A[1],"]")
 x_intersection = -(poly19C[1] - poly19B[1])/(poly19C[0] - poly19B[0])
 print("second intersection: [",x_intersection,poly19B[0]*x_intersection+poly19B[1],"]")
 
+import matplotlib.font_manager as font_manager
+font = font_manager.FontProperties(family='Times New Roman',
+                                   weight='normal',
+                                   style='normal', size=8)
+plt.legend(prop=font, loc="upper right")
 plt.show()
 
 print("Linear Fit Parameters")
-print("m₀ = ",poly19A[0],"+/-",np.sqrt(cov_poly19A[0][0]))
-print("c₀ = ",poly19A[1],"+/-",np.sqrt(cov_poly19A[1][1]))
-print("m₁ = ",poly19B[0],"+/-",np.sqrt(cov_poly19B[0][0]))
-print("c₁ = ",poly19B[1],"+/-",np.sqrt(cov_poly19B[1][1]))
-print("m₂ = ",poly19C[0],"+/-",np.sqrt(cov_poly19C[0][0]))
-print("c₂ = ",poly19C[1],"+/-",np.sqrt(cov_poly19C[1][1]))
+print("m₀ = ",poly19A[0],"±",np.sqrt(cov_poly19A[0][0]))
+print("c₀ = ",poly19A[1],"±",np.sqrt(cov_poly19A[1][1]))
+print("m₁ = ",poly19B[0],"±",np.sqrt(cov_poly19B[0][0]))
+print("c₁ = ",poly19B[1],"±",np.sqrt(cov_poly19B[1][1]))
+print("m₂ = ",poly19C[0],"±",np.sqrt(cov_poly19C[0][0]))
+print("c₂ = ",poly19C[1],"±",np.sqrt(cov_poly19C[1][1]))
+
+##### CHI SQUARED SECTION
 
 area,unc_area = 1.97e-4, 1.4e-5
 def exponential_decay(d,A,mu,k,B):                                                                                 
@@ -71,17 +78,15 @@ plt.yticks(**ticksFont)
 plt.title("Task 19: Range of Decay Particles through Al", **titleFont)
 
 print("\nExponential Fit Parameters")
-print("A = ",params[0],"+/-",np.sqrt(cov_params[0][0]))
-print("µ = ",params[1],"+/-",np.sqrt(cov_params[1][1]))
-print("k = ",params[2],"+/-",np.sqrt(cov_params[2][2]))
-print("B = ",params[3],"+/-",np.sqrt(cov_params[3][3]))
+print("A = ",params[0],"±",np.sqrt(cov_params[0][0]))
+print("µ = ",params[1],"±",np.sqrt(cov_params[1][1]))
+print("k = ",params[2],"±",np.sqrt(cov_params[2][2]))
+print("B = ",params[3],"±",np.sqrt(cov_params[3][3]))
 
 ##### CHI SQUARED SECTION
-
-
-
-
-
+permutations = []
+for i in range(22):
+    permutations.append()
 
 
 
@@ -101,28 +106,34 @@ plt.title("Task 20: Range of Decay Particles through Cu", **titleFont)
 
 poly20A,cov_poly20A = np.polyfit(x20[:8],y20[:8],1,cov=True)
 x= np.linspace(0,0.8,1000)
-plt.plot(x,poly20A[0]*x + poly20A[1])
+plt.plot(x,poly20A[0]*x + poly20A[1], label="2.27MeV β, 0.54MeV β, \n0.51MeV β, γ Rays")
 poly20B,cov_poly20B = np.polyfit(x20[5:12],y20[5:12],1,cov=True)
 x= np.linspace(0.3,1.1,1000)
-plt.plot(x,poly20B[0]*x + poly20B[1],color="red")
+plt.plot(x,poly20B[0]*x + poly20B[1],color="red",label="2.27MeV β, γ Rays")
 poly20C,cov_poly20C = np.polyfit(x20[14:],y20[14:],1,cov=True)
 x= np.linspace(0.8,1.6,1000)
-plt.plot(x,poly20C[0]*x + poly20C[1],color="green")
+plt.plot(x,poly20C[0]*x + poly20C[1],color="green",label="γ Rays")
 
 x_intersection = -(poly20B[1] - poly20A[1])/(poly20B[0] - poly20A[0])
 print("first intersection",x_intersection,poly20A[0]*x_intersection+poly20A[1])
 x_intersection = -(poly20C[1] - poly20B[1])/(poly20C[0] - poly20B[0])
 print("second intersection",x_intersection,poly20B[0]*x_intersection+poly20B[1])
 
+
+import matplotlib.font_manager as font_manager
+font = font_manager.FontProperties(family='Times New Roman',
+                                   weight='normal',
+                                   style='normal', size=8)
+plt.legend(prop=font, loc="upper right")
 plt.show()
 
 print("Linear Fit Parameters")
-print("m₀ = ",poly20A[0],"+/-",np.sqrt(cov_poly20A[0][0]))
-print("c₀ = ",poly20A[1],"+/-",np.sqrt(cov_poly20A[1][1]))
-print("m₁ = ",poly20B[0],"+/-",np.sqrt(cov_poly20B[0][0]))
-print("c₁ = ",poly20B[1],"+/-",np.sqrt(cov_poly20B[1][1]))
-print("m₂ = ",poly20C[0],"+/-",np.sqrt(cov_poly20C[0][0]))
-print("c₂ = ",poly20C[1],"+/-",np.sqrt(cov_poly20C[1][1]))
+print("m₀ = ",poly20A[0],"±",np.sqrt(cov_poly20A[0][0]))
+print("c₀ = ",poly20A[1],"±",np.sqrt(cov_poly20A[1][1]))
+print("m₁ = ",poly20B[0],"±",np.sqrt(cov_poly20B[0][0]))
+print("c₁ = ",poly20B[1],"±",np.sqrt(cov_poly20B[1][1]))
+print("m₂ = ",poly20C[0],"±",np.sqrt(cov_poly20C[0][0]))
+print("c₂ = ",poly20C[1],"±",np.sqrt(cov_poly20C[1][1]))
 
 area,unc_area = 1.97e-4, 1.4e-5
 def exponential_decay(d,A,mu,k,B):                                                                                 
@@ -140,9 +151,11 @@ plt.yticks(**ticksFont)
 plt.title("Task 20: Range of Decay Particles through Cu", **titleFont)
 
 print("\nExponential Fit Parameters")
-print("A = ",params[0],"+/-",np.sqrt(cov_params[0][0]))
-print("µ = ",params[1],"+/-",np.sqrt(cov_params[1][1]))
-print("k = ",params[2],"+/-",np.sqrt(cov_params[2][2]))
-print("B = ",params[3],"+/-",np.sqrt(cov_params[3][3]))
+print("A = ",params[0],"±",np.sqrt(cov_params[0][0]))
+print("µ = ",params[1],"±",np.sqrt(cov_params[1][1]))
+print("k = ",params[2],"±",np.sqrt(cov_params[2][2]))
+print("B = ",params[3],"±",np.sqrt(cov_params[3][3]))
 
 ##### CHI SQUARED SECTION
+
+# %%
